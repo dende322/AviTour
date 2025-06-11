@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración de Especies - AviTour</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/admin-especies.css"/>
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.4/font/bootstrap-icons.min.css">
+
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3 col-lg-2 d-md-block admin-sidebar collapse" id="admin-sidebar">
+            </div>
+            
+            <!-- Contenido principal -->
+            <div class="col-md-9 col-lg-10 admin-content">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Administración de Especies</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#addSpeciesModal">
+                            <i class="fas fa-plus"></i> Nueva Especie
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Tabla de especies -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="mb-0">Especies de Aves</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Imagen</th>
+                                        <th>Nombre</th>
+                                        <th>Nombre Científico</th>
+                                        <th>Estado</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="species-table-body">
+                                    <!-- El contenido se cargará dinámicamente desde JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal para Agregar Especie -->
+    <div class="modal fade" id="addSpeciesModal" tabindex="-1" aria-labelledby="addSpeciesModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addSpeciesModalLabel">Agregar Nueva Especie</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="add-species-form">
+                        <div class="mb-3">
+                            <label for="species-name" class="form-label">Nombre de la Especie</label>
+                            <input type="text" class="form-control" id="species-name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="species-scientific-name" class="form-label">Nombre Científico</label>
+                            <input type="text" class="form-control" id="species-scientific-name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="species-description" class="form-label">Descripción</label>
+                            <textarea class="form-control" id="species-description" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <div class="row input-group" style="margin-left: 5px;">
+                                <div class="form-check col-md-4 my-2">
+                                    <input class="form-check-input" type="checkbox" id="isEndangered">
+                                    <label class="form-check-label" for="checkDefault">Amenazada</label>
+                                </div>
+                                <div class="form-check col-md-4 my-2">
+                                    <input class="form-check-input" type="checkbox" id="isEndemic">
+                                    <label class="form-check-label" for="checkDefault">Endemica</label>
+                                </div>
+                                <div class="form-check col-md-4 my-2">
+                                    <input class="form-check-input" type="checkbox" id="isMigratory">
+                                    <label class="form-check-label" for="checkDefault">Migratoria</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="species-status" class="form-label">Estado de Conservación</label>
+                            <select class="form-select" id="species-status" required>
+                                <option value="PC">En Peligro Crítico</option>
+                                <option value="VU">Vulnerable</option>
+                                <option value="PM">Preocupación Menor</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="input-habitat" class="form-label">Sitios de Avistamiento</label>
+                            <div class="row input-group" id="input-habitat">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="species-image" class="form-label">URL de la Imagen</label>
+                            <input type="text" class="form-control" id="species-image" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="save-species-btn">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal para Editar Especie -->
+    <div class="modal fade" id="editSpeciesModal" tabindex="-1" aria-labelledby="editSpeciesModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editSpeciesModalLabel">Editar Especie</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="edit-species-form">
+                        <input type="hidden" id="edit-species-id">
+                        <div class="mb-3">
+                            <label for="edit-species-name" class="form-label">Nombre de la Especie</label>
+                            <input type="text" class="form-control" id="edit-species-name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-species-scientific-name" class="form-label">Nombre Científico</label>
+                            <input type="text" class="form-control" id="edit-species-scientific-name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-species-description" class="form-label">Descripción</label>
+                            <textarea class="form-control" id="edit-species-description" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <div class="row input-group" style="margin-left: 5px;">
+                                <div class="form-check col-md-4 my-2">
+                                    <input class="form-check-input" type="checkbox" id="edit-isEndangered">
+                                    <label class="form-check-label" for="checkDefault">Amenazada</label>
+                                </div>
+                                <div class="form-check col-md-4 my-2">
+                                    <input class="form-check-input" type="checkbox" id="edit-isEndemic">
+                                    <label class="form-check-label" for="checkDefault">Endemica</label>
+                                </div>
+                                <div class="form-check col-md-4 my-2">
+                                    <input class="form-check-input" type="checkbox" id="edit-isMigratory">
+                                    <label class="form-check-label" for="checkDefault">Migratoria</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-species-status" class="form-label">Estados</label>
+                            <select class="form-select" id="edit-species-status" required>
+                                <option value="PC">En Peligro Crítico</option>
+                                <option value="VU">Vulnerable</option>
+                                <option value="PM">Preocupación Menor</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-species-habitat" class="form-label">Sitios de Avistamiento</label>
+                            <div class="row input-group" id="habitat">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-species-image" class="form-label">URL de la Imagen</label>
+                            <input type="text" class="form-control" id="edit-species-image" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="update-species-btn">Actualizar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal para Eliminar Especie -->
+    <div class="modal fade" id="deleteSpeciesModal" tabindex="-1" aria-labelledby="deleteSpeciesModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteSpeciesModalLabel">Confirmar Eliminación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>¿Estás seguro de que deseas eliminar esta especie? </br><strong>Esta acción no se puede deshacer.</strong></p>
+                    <input type="hidden" id="delete-species-id">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger" id="confirm-delete-btn">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript personalizado -->
+    <script src="../../js/main.js"></script>
+    <!-- JavaScript para login -->
+    <script src="../../js/login.js"></script>
+    <!-- JavaScript para administración de especies -->
+    <script src="../../js/admin-species.js"></script>
+</body>
+</html>

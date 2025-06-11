@@ -1,0 +1,67 @@
+.login-container {
+  max-width: 400px;
+  margin: 100px auto;
+}
+.login-card {
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  background-color: var(--card-bg-color);
+}
+.login-header {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 20px;
+  border-radius: 10px 10px 0 0;
+  text-align: center;
+}
+.login-body {
+  padding: 30px;
+}
+.btn-login {
+  width: 100%;
+  padding: 10px;
+  font-weight: 700;
+}
+#error-message {
+  display: none;
+  color: #dc3545;
+  margin-top: 10px;
+  text-align: center;
+}
+form {
+  color: var(--text-color);
+}
+
+.dark-mode {
+  .form-control,
+  .form-check-input {
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    border: 1px solid var(--bg-color);
+  }
+
+  .form-control:focus,
+  input:focus {
+    color: var(--text-color);
+    background-color: var(--primary-color);
+    border: 1px solid var(--bg-color);
+  }
+
+  .input-group-text {
+    background-color: var(--card-bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--bg-color);
+  }
+}
+
+.form-control::placeholder {
+  color: var(--grey-color);
+  opacity: 1; /* Para asegurar que el color se vea igual en todos los navegadores */
+}
+
+a {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-color);
+  text-decoration: none;
+}

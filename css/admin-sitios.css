@@ -1,0 +1,23 @@
+.site-image-preview {
+  width: 100px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.card {
+  border: none;
+  transition: transform 0.3s ease;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--card-bg-color);
+  color: var(--text-color);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+
+  .table td,
+  .table th {
+    background-color: var(--card-bg-color) !important;
+    color: var(--text-color) !important;
+  }
+}

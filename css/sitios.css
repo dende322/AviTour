@@ -1,0 +1,98 @@
+/* Estilos del encabezado */
+.hero-section {
+  background: linear-gradient(rgba(38, 70, 83, 0.8), rgba(38, 70, 83, 0.8)),
+    url("../img/aves/montañerito-apisa.webp");
+  background-size: cover;
+  background-position: center;
+  color: #eeeeee;
+  padding: 100px 0;
+  margin-bottom: 30px;
+}
+
+.card-filters {
+  color: var(--text-color);
+  background-color: var(--card-bg-color);
+}
+
+.dark-mode {
+  .card-filters select {
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    border: 1px solid var(--bg-color);
+  }
+
+  .site-card .card-title {
+    color: var(--highlight-color);
+  }
+
+  .feature-card .card-title {
+    color: var(--highlight-color);
+    font-weight: bold;
+  }
+}
+
+.card-filters option:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Tarjetas de sitios */
+.site-card {
+  border: none;
+  transition: transform 0.3s ease;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--card-bg-color);
+  color: var(--text-color);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.site-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.site-card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.site-card .card-title {
+  color: var(--secondary-color);
+}
+
+/* Estilos para el mapa */
+#map_ {
+  height: 500px;
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Iconos de características */
+.feature-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: var(--icon-color);
+}
+
+.feature-card {
+  border: none;
+  transition: transform 0.3s ease;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--card-bg-color);
+  color: var(--text-color);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card .card-text {
+  color: var(--text-color);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}

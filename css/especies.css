@@ -1,0 +1,99 @@
+/* Estilos del encabezado */
+.hero-section {
+  background: linear-gradient(rgba(38, 70, 83, 0.8), rgba(38, 70, 83, 0.8)),
+    url("../img/aves/montañerito-apisa.webp");
+  background-size: cover;
+  background-position: center;
+  color: #eeeeee;
+  padding: 100px 0;
+  margin-bottom: 30px;
+}
+
+.card-filters {
+  color: var(--text-color);
+  background-color: var(--card-bg-color);
+}
+
+.dark-mode {
+  .card-filters input {
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    border: 1px solid var(--bg-color);
+  }
+
+  .species-card .card-title {
+    color: var(--highlight-color);
+  }
+
+  .feature-icon {
+    color: var(--highlight-color);
+  }
+
+  .feature-card .card-title {
+    color: var(--highlight-color);
+    font-weight: bold;
+  }
+}
+
+.card-filters option:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Estilos para tarjetas de especies */
+.species-card {
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  margin-bottom: 20px;
+  background-color: var(--card-bg-color);
+  color: var(--text-color);
+}
+
+.species-card:hover {
+  transform: translateY(-5px);
+}
+
+.species-card img {
+  height: 600px;
+  object-fit: cover;
+}
+
+.species-card .card-title {
+  color: var(--accent-color);
+}
+
+/* Iconos de características */
+.feature-icon {
+  color: var(--accent-color);
+}
+
+.feature-card {
+  border: none;
+  transition: transform 0.3s ease;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--card-bg-color);
+  color: var(--text-color);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card .list-group {
+  background-color: var(--card-bg-color) !important;
+}
+
+.feature-card .card-text {
+  color: var(--text-color);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.list-group-item {
+  background-color: var(--card-bg-color) !important;
+  color: var(--text-color);
+}

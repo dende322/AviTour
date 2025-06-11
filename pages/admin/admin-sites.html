@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Administración de Sitios - AviTour</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="../../css/global.css" />
+    <link rel="stylesheet" href="../../css/admin-sitios.css" />
+    <!-- Font Awesome para iconos -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.4/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Sidebar -->
+        <div
+          class="col-md-3 col-lg-2 d-md-block admin-sidebar collapse"
+          id="admin-sidebar"
+        ></div>
+
+        <!-- Contenido principal -->
+        <div class="col-md-9 col-lg-10 admin-content">
+          <div
+            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+          >
+            <h1 class="h2">Administración de Sitios</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <button
+                type="button"
+                class="btn btn-sm btn-success"
+                data-bs-toggle="modal"
+                data-bs-target="#addSiteModal"
+              >
+                <i class="fas fa-plus"></i> Nuevo Sitio
+              </button>
+            </div>
+          </div>
+
+          <!-- Tabla de sitios -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h5 class="mb-0">Sitios de Avistamiento</h5>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Imagen</th>
+                      <th>Nombre</th>
+                      <th>Ubicación</th>
+                      <th>Descripción</th>
+                      <th>Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody id="sites-table-body">
+                    <!-- El contenido se cargará dinámicamente desde JavaScript -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal para Agregar Sitio -->
+    <div
+      class="modal fade"
+      id="addSiteModal"
+      tabindex="-1"
+      aria-labelledby="addSiteModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addSiteModalLabel">
+              Agregar Nuevo Sitio
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="add-site-form">
+              <div class="mb-3">
+                <label for="site-name" class="form-label"
+                  >Nombre del Sitio</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="site-name"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="site-location" class="form-label">Ubicación</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="site-location"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="site-description" class="form-label"
+                  >Descripción</label
+                >
+                <textarea
+                  class="form-control"
+                  id="site-description"
+                  rows="3"
+                  required
+                ></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="site-image" class="form-label"
+                  >URL de la Imagen</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="site-image"
+                  placeholder="img/sitios/nombre-imagen.jpg"
+                  required
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancelar
+            </button>
+            <button type="button" class="btn btn-success" id="save-site-btn">
+              Guardar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal para Editar Sitio -->
+    <div
+      class="modal fade"
+      id="editSiteModal"
+      tabindex="-1"
+      aria-labelledby="editSiteModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editSiteModalLabel">Editar Sitio</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="edit-site-form">
+              <input type="hidden" id="edit-site-id" />
+              <div class="mb-3">
+                <label for="edit-site-name" class="form-label"
+                  >Nombre del Sitio</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="edit-site-name"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="edit-site-location" class="form-label"
+                  >Ubicación</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="edit-site-location"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="edit-site-description" class="form-label"
+                  >Descripción</label
+                >
+                <textarea
+                  class="form-control"
+                  id="edit-site-description"
+                  rows="3"
+                  required
+                ></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="edit-site-image" class="form-label"
+                  >URL de la Imagen</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="edit-site-image"
+                  required
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancelar
+            </button>
+            <button type="button" class="btn btn-success" id="update-site-btn">
+              Actualizar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal de Confirmación para Eliminar -->
+    <div
+      class="modal fade"
+      id="deleteSiteModal"
+      tabindex="-1"
+      aria-labelledby="deleteSiteModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="deleteSiteModalLabel">
+              Confirmar Eliminación
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>
+              ¿Estás seguro de que deseas eliminar este sitio? Esta acción no se
+              puede deshacer.
+            </p>
+            <input type="hidden" id="delete-site-id" />
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancelar
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              id="confirm-delete-btn"
+            >
+              Eliminar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript personalizado -->
+    <script src="../../js/main.js"></script>
+    <!-- JavaScript para login -->
+    <script src="../../js/login.js"></script>
+    <!-- JavaScript para administración de sitios -->
+    <script src="../../js/admin-sites.js"></script>
+  </body>
+</html>

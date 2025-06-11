@@ -1,0 +1,35 @@
+footer {
+  background-color: var(--secondary-color);
+  padding: 10px;
+  text-align: justify;
+  font-size: 14px;
+  color: #6c757d;
+  font-size: 1rem;
+}
+
+.title {
+  color: var(--highlight-color);
+  font-weight: bold;
+}
+
+.text {
+  color: #eeeeee;
+}
+
+.text a {
+  color: #eeeeee;
+  text-decoration: none;
+}
+
+.text a:hover {
+  color: var(--highlight-color);
+  text-decoration: none;
+}
+
+.derechos {
+  color: var(--text-color);
+}
+
+i {
+  font-size: 1.3rem;
+}

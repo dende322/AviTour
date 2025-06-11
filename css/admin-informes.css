@@ -1,0 +1,44 @@
+.card {
+  border: none;
+  transition: transform 0.3s ease;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-styled,
+.table td,
+.table th {
+  background-color: var(--card-bg-color) !important;
+  color: var(--text-color) !important;
+}
+
+.text-success,
+.text-primary {
+  font-weight: bold;
+  color: var(--primary-color) !important;
+}
+
+.text-danger {
+  font-weight: bold;
+  color: var(--accent-color) !important;
+}
+
+.nav-tabs .nav-items.show .nav-link,
+.nav-tabs .nav-link.active {
+  color: var(--text-color);
+  background-color: var(--card-bg-color);
+}
+
+.dark-mode {
+  .text-primary,
+  .text-success,
+  .text-danger {
+    color: var(--highlight-color) !important;
+  }
+
+  .btn-informe:hover {
+    color: var(--highlight-color);
+  }
+}

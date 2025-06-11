@@ -1,0 +1,50 @@
+.admin-content {
+  padding: 20px;
+}
+
+.card {
+  border: none;
+  transition: transform 0.3s ease;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--card-bg-color);
+  color: var(--text-color);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+
+  a {
+    color: var(--text-color);
+    text-decoration: none;
+    background-color: var(--card-bg-color);
+
+    .dark-mode & {
+      border-color: var(--primary-color);
+
+      &:hover {
+        font-size: 500;
+        color: var(--text-color);
+        background-color: var(--primary-color);
+      }
+    }
+  }
+}
+
+.dark-mode .card-title {
+  color: var(--highlight-color);
+  font-weight: bold;
+}
+
+.text-icon {
+  i {
+    font-size: 1.3rem;
+    color: var(--icon-color);
+  }
+  color: var(--icon-color);
+}
+
+/* Cambia el fondo y color de todas las celdas */
+.table td,
+.table th {
+  background-color: var(--card-bg-color) !important;
+  color: var(--text-color) !important;
+}

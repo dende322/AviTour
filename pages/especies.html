@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Especies de Aves - AviTour</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/especies.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <!-- Font Awesome para iconos -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav
+      class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top"
+      id="navbar-pages"
+    ></nav>
+
+    <!-- Hero Section para Especies -->
+    <header class="hero-section">
+      <div class="container text-center py-5">
+        <h1 class="display-4 text-white">Especies de Aves</h1>
+        <p class="lead text-white">
+          Descubre la diversidad de aves en Antioquia
+        </p>
+      </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <div class="container py-5">
+      <!-- Barra de búsqueda -->
+      <div class="row mb-4">
+        <div class="col-md-12">
+          <div class="card card-filters">
+            <div class="card-body">
+              <h5 class="card-title">Buscar Especies</h5>
+              <div class="row g-3">
+                <div class="col-md-8">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="species-search"
+                    placeholder="Buscar por nombre (ej. Barranquero, Colibrí...)"
+                  />
+                </div>
+                <div class="col-md-2">
+                  <button class="btn btn-success w-100" id="search-button">
+                    <i class="fas fa-search me-2"></i>Buscar
+                  </button>
+                </div>
+                <div class="col-md-2">
+                  <button class="btn btn-success w-100" id="clear-button">
+                    Limpiar Filtros
+                  </button>
+                </div>
+              </div>
+              <div class="mt-3">
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="filter-endangered"
+                    value="endangered"
+                  />
+                  <label class="form-check-label" for="filter-endangered"
+                    >En peligro</label
+                  >
+                </div>
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="filter-endemic"
+                    value="endemic"
+                  />
+                  <label class="form-check-label" for="filter-endemic"
+                    >Endémicas</label
+                  >
+                </div>
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="filter-migratory"
+                    value="migratory"
+                  />
+                  <label class="form-check-label" for="filter-migratory"
+                    >Migratorias</label
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lista de especies -->
+      <div class="row" id="all-species">
+        <!-- El contenido se cargará dinámicamente desde main.js -->
+      </div>
+    </div>
+
+    <!-- Sección de especie individual (se mostrará cuando se seleccione una especie) -->
+    <div
+      class="container py-5"
+      id="species-details-container"
+      style="display: none"
+    >
+      <div id="species-details">
+        <!-- El contenido se cargará dinámicamente desde main.js -->
+      </div>
+    </div>
+
+    <!-- Categorías de conservación -->
+    <section class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-5">Categorías de Conservación</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card h-100 feature-card">
+              <div class="card-body text-center">
+                <span class="badge badge-danger mb-3"
+                  >En Peligro Crítico (CR)</span
+                >
+                <h3 class="card-title">Alto Riesgo</h3>
+                <p class="card-text">
+                  Especies que enfrentan un riesgo extremadamente alto de
+                  extinción en estado silvestre.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 feature-card">
+              <div class="card-body text-center">
+                <span class="badge badge-warning text-dark mb-3"
+                  >Vulnerable (VU)</span
+                >
+                <h3 class="card-title">Riesgo Medio</h3>
+                <p class="card-text">
+                  Especies que enfrentan un alto riesgo de extinción en estado
+                  silvestre a mediano plazo.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 feature-card">
+              <div class="card-body text-center">
+                <span class="badge badge-success mb-3"
+                  >Preocupación Menor (LC)</span
+                >
+                <h3 class="card-title">Bajo Riesgo</h3>
+                <p class="card-text">
+                  Especies abundantes y de amplia distribución que no califican
+                  como amenazadas.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Información sobre avistamiento -->
+    <section class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-5">Cómo Identificar Aves</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card mb-4 feature-card">
+              <div class="card-body">
+                <h3 class="card-title">Características Clave</h3>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    <i class="fas fa-feather me-2 feature-icon"></i>
+                    <strong>Tamaño y forma:</strong> Observa el tamaño general,
+                    la forma del cuerpo y la longitud del pico, cola y alas.
+                  </li>
+                  <li class="list-group-item">
+                    <i class="fas fa-palette me-2 feature-icon"></i>
+                    <strong>Coloración:</strong> Fíjate en los patrones de
+                    color, marcas distintivas y diferencias entre machos y
+                    hembras.
+                  </li>
+                  <li class="list-group-item">
+                    <i class="fas fa-music me-2 feature-icon"></i>
+                    <strong>Canto y llamados:</strong> Aprende a reconocer los
+                    sonidos característicos de cada especie.
+                  </li>
+                  <li class="list-group-item">
+                    <i class="fas fa-tree me-2 feature-icon"></i>
+                    <strong>Hábitat:</strong> Considera dónde se encuentra el
+                    ave, ya que muchas especies tienen hábitats específicos.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card feature-card">
+              <div class="card-body">
+                <h3 class="card-title">Herramientas Recomendadas</h3>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    <i class="fas fa-book me-2 feature-icon"></i>
+                    <strong>Guía de campo:</strong> Una guía específica para
+                    aves de Colombia o Antioquia.
+                  </li>
+                  <li class="list-group-item">
+                    <i class="fas fa-binoculars me-2 feature-icon"></i>
+                    <strong>Binoculares:</strong> Idealmente con aumento de 8x42
+                    para observación de aves.
+                  </li>
+                  <li class="list-group-item">
+                    <i class="fas fa-mobile-alt me-2 feature-icon"></i>
+                    <strong>Aplicaciones móviles:</strong> Como Merlin Bird ID o
+                    eBird para identificación y registro.
+                  </li>
+                  <li class="list-group-item">
+                    <i class="fas fa-camera me-2 feature-icon"></i>
+                    <strong>Cámara:</strong> Para documentar tus avistamientos y
+                    ayudar en la identificación posterior.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4" id="footer-pages"></footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript personalizado -->
+    <script src="../js/main.js"></script>
+  </body>
+</html>
