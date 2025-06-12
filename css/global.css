@@ -78,6 +78,10 @@
     color: var(--text-color);
     border: 1px solid var(--bg-color);
   }
+
+  label{
+    color: var(--text-color);
+  }
 }
 
 body {
