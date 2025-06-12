@@ -12,7 +12,7 @@
     <!-- CSS personalizado -->
     <link rel="stylesheet" href="css/global.css" />
     <link rel="stylesheet" href="css/index.css" />
-    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/landing.css" />
 
     <!-- Font Awesome para iconos -->
     <link
@@ -24,276 +24,196 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
     />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top">
-      <div class="container">
-        <a class="navbar-brand logo" href="index.html">
-          <img src="img/logo.png" alt="AviTour Logo" height="40" class="me-2" />
-          <span>AviTour</span>
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="pages/sitios.html"
-                >Sitios de Avistamiento</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="pages/especies.html">Especies</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="pages/galeria.html">Galería</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="pages/eventos.html">Eventos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="pages/contacto.html">Contacto</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="pages/planes.html">Planes</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="pages/admin.html"
-                >Admin <i class="fas fa-user-lock"></i
-              ></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <button id="theme-switch">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          height="24px"
-          viewBox="0 -960 960 960"
-          width="24px"
-        >
-          <path
-            d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z"
-          ></path>
-        </svg>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          height="24px"
-          viewBox="0 -960 960 960"
-          width="24px"
-        >
-          <path
-            d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"
-          ></path>
-        </svg>
-      </button>
-    </nav>
-
-    <!-- Hero Section -->
-    <header class="hero-section">
-      <div class="container text-center py-5">
-        <h1 class="display-4">Descubre el Mundo de las Aves en Antioquia</h1>
-        <p class="lead">
-          Explora los mejores sitios para observación de aves en el suroeste
-          antioqueño
-        </p>
-        <a href="pages/sitios.html" class="btn btn-success btn-lg mt-3"
-          >Explorar Sitios</a
-        >
-      </div>
-    </header>
-
-    <!-- Características Principales -->
-    <section class="py-5">
-      <div class="container">
-        <h2 class="text-center mb-5">¿Qué ofrecemos?</h2>
-        <div class="row g-4">
-          <div class="col-md-4">
-            <div class="card h-100 feature-card">
-              <div class="card-body text-center">
-                <i class="fas fa-map-marked-alt feature-icon"></i>
-                <h3 class="card-title">Sitios de Avistamiento</h3>
-                <p class="card-text">
-                  Información detallada sobre los mejores lugares para observar
-                  aves en la región.
-                </p>
+    <header>
+      <div class="container-landing">
+          <div class="logo-container-landing">
+              <img src="img/logo.png" alt="AviTour Logo" class="logo">
+              <h1>AviTour Antioquia</h1>
+          </div>
+          <nav>
+              <ul>
+                  <li><a href="#beneficios">Beneficios</a></li>
+                  <li><a href="#caracteristicas">Características</a></li>
+                  <li><a href="#equipo">Equipo</a></li>
+                  <li><a href="#contacto">Contacto</a></li>
+              </ul>
+              <div class="menu-toggle">
+                  <i class="fas fa-bars"></i>
               </div>
-            </div>
+          </nav>
+      </div>
+  </header>
+
+  <section class="hero">
+      <div class="container-landing">
+          <div class="hero-content">
+              <h2>Descubre la Riqueza Avifaunística del Suroeste Antioqueño</h2>
+              <p>Explora los mejores sitios para observar aves, conoce las especies locales y conecta con la naturaleza</p>
+              <a href="pages/inicio.html" class="btn">Conoce más</a>
           </div>
-          <div class="col-md-4">
-            <div class="card h-100 feature-card">
-              <div class="card-body text-center">
-                <i class="fas fa-feather-alt feature-icon"></i>
-                <h3 class="card-title">Especies Locales</h3>
-                <p class="card-text">
-                  Conoce las especies que habitan en cada zona y sus
-                  características.
-                </p>
+      </div>
+  </section>
+
+  <section id="beneficios" class="benefits">
+      <div class="container-landing">
+          <h2>Beneficios de AviTour</h2>
+          <div class="benefits-grid">
+              <div class="benefit-card">
+                  <div class="icon-container-landing">
+                      <i class="fas fa-map-marked-alt"></i>
+                  </div>
+                  <h3>Descubre Nuevos Lugares</h3>
+                  <p>Encuentra los mejores puntos de avistamiento en el suroeste de Antioquia con información detallada y actualizada.</p>
               </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card h-100 feature-card">
-              <div class="card-body text-center">
-                <i class="fas fa-calendar-alt feature-icon"></i>
-                <h3 class="card-title">Eventos</h3>
-                <p class="card-text">
-                  Mantente informado sobre eventos de observación de aves en la
-                  región.
-                </p>
+              <div class="benefit-card">
+                  <div class="icon-container-landing">
+                      <i class="fas fa-binoculars"></i>
+                  </div>
+                  <h3>Identifica Especies</h3>
+                  <p>Accede a nuestra base de datos completa de aves locales con descripciones, imágenes y sonidos.</p>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Sitios Destacados -->
-    <section class="py-5">
-      <div class="container">
-        <h2 class="text-center mb-5">Sitios Destacados</h2>
-        <div class="row g-4" id="featured-sites">
-          <!-- El contenido se cargará dinámicamente desde main.js -->
-        </div>
-        <div class="text-center mt-4">
-          <a href="pages/sitios.html" class="btn btn-success"
-            >Ver todos los sitios</a
-          >
-        </div>
-      </div>
-    </section>
-
-    <!-- Especies Destacadas -->
-    <section class="py-5">
-      <div class="container">
-        <h2 class="text-center mb-5">Especies Destacadas</h2>
-        <div class="row g-4" id="featured-species">
-          <!-- El contenido se cargará dinámicamente desde main.js -->
-        </div>
-        <div class="text-center mt-4">
-          <a href="pages/especies.html" class="btn btn-success"
-            >Ver todas las especies</a
-          >
-        </div>
-      </div>
-    </section>
-
-    <!-- Próximos Eventos -->
-    <section class="py-5">
-      <div class="container">
-        <h2 class="text-center mb-5">Próximos Eventos</h2>
-        <div class="row g-4">
-          <div class="col-md-6">
-            <div class="card h-100 event-card">
-              <div class="card-body">
-                <div class="d-flex justify-content-between">
-                  <h3 class="card-title">Festival de Aves de Antioquia</h3>
-                  <span class="badge event-date">15 Marzo</span>
-                </div>
-                <p class="card-text">
-                  Festival anual con recorridos guiados, charlas y actividades
-                  para toda la familia.
-                </p>
-                <a href="pages/eventos.html?id=1" class="btn btn-success"
-                  >Más información</a
-                >
+              <div class="benefit-card">
+                  <div class="icon-container-landing">
+                      <i class="fas fa-route"></i>
+                  </div>
+                  <h3>Planifica tu Aventura</h3>
+                  <p>Utiliza nuestros mapas interactivos para crear rutas personalizadas y optimizar tu experiencia de avistamiento.</p>
               </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="card h-100 event-card">
-              <div class="card-body">
-                <div class="d-flex justify-content-between">
-                  <h3 class="card-title">Taller de Fotografía de Aves</h3>
-                  <span class="badge event-date">5 Abril</span>
-                </div>
-                <p class="card-text">
-                  Aprende técnicas de fotografía de aves con expertos en el
-                  campo.
-                </p>
-                <a href="pages/eventos.html?id=2" class="btn btn-success"
-                  >Más información</a
-                >
+              <div class="benefit-card">
+                  <div class="icon-container-landing">
+                      <i class="fas fa-camera"></i>
+                  </div>
+                  <h3>Comparte tus Hallazgos</h3>
+                  <p>Sube tus fotos y observaciones para contribuir a la comunidad de observadores de aves.</p>
               </div>
-            </div>
           </div>
-        </div>
-        <div class="text-center mt-4">
-          <a href="pages/eventos.html" class="btn btn-success"
-            >Ver todos los eventos</a
-          >
-        </div>
       </div>
-    </section>
+  </section>
 
-    <!-- Mapa -->
-    <section class="py-5">
-      <div class="container">
-        <h2 class="text-center mb-5">Mapa de Sitios</h2>
-        <div class="map-container">
-          <div id="map_"></div>
-        </div>
+  <section id="caracteristicas" class="features">
+      <div class="container-landing">
+          <h2>Características Principales</h2>
+          <div class="features-container-landing">
+              <div class="feature-text">
+                  <div class="feature-item">
+                      <h3><i class="fas fa-map-pin"></i> Sitios de Avistamiento</h3>
+                      <p>Información detallada sobre los principales puntos de avistamiento, incluyendo nombre, ubicación y características del entorno natural.</p>
+                  </div>
+                  <div class="feature-item">
+                      <h3><i class="fas fa-map"></i> Mapas y Geolocalización</h3>
+                      <p>Integración con mapas interactivos para visualizar las zonas de avistamiento y facilitar tu orientación en el campo.</p>
+                  </div>
+                  <div class="feature-item">
+                      <h3><i class="fas fa-feather-alt"></i> Especies de Aves</h3>
+                      <p>Base de datos completa con información sobre las aves presentes en cada zona, incluyendo características, comportamiento y estado de conservación.</p>
+                  </div>
+                  <div class="feature-item">
+                      <h3><i class="fas fa-images"></i> Contenido Visual</h3>
+                      <p>Galería de imágenes de alta calidad de los sitios de avistamiento y las especies registradas para enriquecer tu experiencia.</p>
+                  </div>
+              </div>
+              <div class="feature-image">
+                  <div class="image-container-landing">
+                      <img src="img/landing/montañerito-paisa.jpg" alt="Observación de aves">
+                  </div>
+              </div>
+          </div>
       </div>
-    </section>
+  </section>
 
-    <!-- Footer -->
-    <footer class="py-4">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <h5 class="title">AviTour</h5>
-            <p class="text">
-              Tu guía para la observación de aves en el suroeste de Antioquia.
-            </p>
+  <section class="gallery">
+      <div class="container-landing">
+          <h2>Galería de Aves</h2>
+          <div class="gallery-grid">
+              <div class="gallery-item">
+                  <img src="img/landing/Carpintero-habado.jpg" alt="Ave 1">
+              </div>
+              <div class="gallery-item">
+                  <img src="img/landing/Carriqui.jpg" alt="Ave 2">
+              </div>
+              <div class="gallery-item">
+                  <img src="img/landing/copeton-comun.jpg" alt="Ave 3">
+              </div>
+              <div class="gallery-item">
+                  <img src="img/landing/Tangara-real.jpg" alt="Ave 4">
+              </div>
           </div>
-          <div class="col-md-4">
-            <h5 class="title">Enlaces Rápidos</h5>
-            <ul class="list-unstyled text">
-              <li>
-                <a href="pages/sitios.html">Sitios de Avistamiento</a>
-              </li>
-              <li>
-                <a href="pages/especies.html">Especies</a>
-              </li>
-              <li>
-                <a href="pages/galeria.html">Galería</a>
-              </li>
-              <li>
-                <a href="pages/eventos.html">Eventos</a>
-              </li>
-              <li>
-                <a href="pages/contacto.html">Contacto</a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-md-4">
-            <h5 class="title">Contacto</h5>
-            <p class="text">
-              <i class="fas fa-envelope me-2"></i> info@avitour.co
-            </p>
-            <p class="text"><i class="fas fa-phone me-2"></i> (604) 123-4567</p>
-            <div class="social-icons text">
-              <a href="#" class="me-2"><i class="fab fa-facebook-f"></i></a>
-              <a href="#" class="me-2"><i class="fab fa-instagram"></i></a>
-              <a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
-            </div>
-          </div>
-        </div>
-        <hr style="border-color: rgba(255, 255, 255, 0.2)" />
-        <div class="text-center derechos">
-          <p class="">&copy; 2023 AviTour. Todos los derechos reservados.</p>
-        </div>
       </div>
-    </footer>
+  </section>
+
+  <footer>
+      <div class="container-landing">
+          <div id="equipo" class="team-section">
+              <h2>Nuestro Equipo</h2>
+              <div class="team-container-landing">
+                  <div class="team-member">
+                      <div class="member-image">
+                          <img src="img/equipo/santiago.jpg" alt="Desarrollador 1">
+                      </div>
+                      <h3>Santiago Gaviria</h3>
+                      <p>Desarrollador Frontend</p>
+                      <div class="social-links">
+                          <a href="#"><i class="fab fa-linkedin"></i></a>
+                          <a href="#"><i class="fab fa-github"></i></a>
+                      </div>
+                  </div>
+                  <div class="team-member">
+                      <div class="member-image">
+                          <img src="img/equipo/sara.jpg" alt="Desarrollador 2">
+                      </div>
+                      <h3>Sara Cárdenas</h3>
+                      <p>Desarrolladora Backend</p>
+                      <div class="social-links">
+                          <a href="#"><i class="fab fa-linkedin"></i></a>
+                          <a href="#"><i class="fab fa-github"></i></a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div id="contacto" class="contact-section">
+              <div class="contact-form">
+                  <h2>Contáctanos</h2>
+                  <form id="feedback-form">
+                      <div class="form-group">
+                          <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+                      </div>
+                      <div class="form-group">
+                          <input type="email" id="correo" name="correo" placeholder="Correo electrónico" required>
+                      </div>
+                      <div class="form-row">
+                          <div class="form-group half">
+                              <input type="text" id="pais" name="pais" placeholder="País" required>
+                          </div>
+                          <div class="form-group half">
+                              <input type="text" id="ciudad" name="ciudad" placeholder="Ciudad" required>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <textarea id="mensaje" name="mensaje" placeholder="¿Qué te gustó de nuestra página?" required></textarea>
+                      </div>
+                      <button type="submit" class="btn">Enviar</button>
+                  </form>
+              </div>
+          </div>
+
+          <div class="social-section">
+              <h2>Síguenos</h2>
+              <div class="social-icons">
+                  <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                  <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+              </div>
+          </div>
+
+          <div class="footer-bottom">
+              <p>&copy; 2023 AviTour Antioquia. Todos los derechos reservados.</p>
+          </div>
+      </div>
+  </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
