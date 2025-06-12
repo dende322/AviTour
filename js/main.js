@@ -496,6 +496,9 @@ function loadNavbarPages() {
                         <a class="nav-link" href="contacto.html">Contacto</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="planes.html">Planes</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="admin.html">Admin <i class="fas fa-user-lock"></i></a>
                     </li>
                 </ul>

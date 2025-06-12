@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Planes - AviTour</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/planes.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <!-- Font Awesome para iconos -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+<!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav
+      class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top"
+      id="navbar-pages"
+    ></nav>
+
+    <!-- Hero Section para Contacto -->
+    <header class="hero-section">
+      <div class="container text-center py-5">
+        <h1 class="display-4 text-white">Planes</h1>
+        <p class="lead text-white">
+          A tú alcance y que te podrían interesar
+        </p>
+      </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <div class="container py-5">
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+            <div class="col">
+              <div class="card mb-4  shadow-sm card-basic">
+                <div class="card-header py-3">
+                  <h4 class="my-0 fw-normal">Básica (Pajarero)</h4>
+                </div>
+                <div class="price-container">
+                  <h1 class="price"><span class="price-currency">$</span>29.900</h1>
+                  <p class="price-month">por año</p>
+                </div>
+                <div class="card-body">
+                  <ul class="list-unstyled mt-3 mb-4">
+                    <li>Acceso a mapas básicos de avistamiento</li>
+                    <li>Galería de 100 especies comunes</li>
+                    <li>Guía de identificación básica</li>
+                    <li>Registro personal de avistamientos</li>
+                    <li>Notificaciones de eventos cercanos</li>
+                    <li>Soporte por correo electrónico</li>
+                  </ul>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-license="Básica (Pajarero)"
+                    data-price="29900"
+                  >
+                    Agregar
+                  </button>
+                  <input
+                    type="number"
+                    class="quantity-input"
+                    min="1"
+                    value="1"
+                    placeholder="Cantidad"
+                  />
+                  <!-- Sistema de calificación 5 estrellas -->
+                  <div class="rating-container mt-3">
+                    <p class="rating-label mb-1">Califica esta licencia:</p>
+                    <div class="star-rating" data-license="Básica (Pajarero)">
+                      <i class="bi bi-star rating-star" data-value="1"></i>
+                      <i class="bi bi-star rating-star" data-value="2"></i>
+                      <i class="bi bi-star rating-star" data-value="3"></i>
+                      <i class="bi bi-star rating-star" data-value="4"></i>
+                      <i class="bi bi-star rating-star" data-value="5"></i>
+                    </div>
+                    <div class="rating-value">Sin calificación</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card mb-4 shadow-sm card-standard">
+                <div class="card-header py-3">
+                  <h4 class="my-0 fw-normal">Estándar (Observador)</h4>
+                </div>
+                <div class="price-container">
+                  <h1 class="price"><span class="price-currency">$</span>59.900</h1>
+                  <p class="price-month">por año</p>
+                </div>
+                <div class="card-body">
+                  <ul class="list-unstyled mt-3 mb-4">
+                    <li>Acceso a mapas detallados con filtros</li>
+                    <li>Galería de 500 especies con descripciones</li>
+                    <li>Guía de identificación avanzada con sonidos</li>
+                    <li>Registro y estadísticas de avistamientos</li>
+                    <li>Comunidad de observadores y foros</li>
+                    <li>Soporte prioritario 24/5</li>
+                  </ul>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-license="Estándar (Observador)"
+                    data-price="59900"
+                  >
+                    Agregar
+                  </button>
+                  <input
+                    type="number"
+                    class="quantity-input"
+                    min="1"
+                    value="1"
+                    placeholder="Cantidad"
+                  />
+                   <!-- Sistema de calificación 5 estrellas -->
+                   <div class="rating-container mt-3">
+                    <p class="rating-label mb-1">Califica esta licencia:</p>
+                    <div class="star-rating" data-license="Estándar (Observador)">
+                      <i class="bi bi-star rating-star" data-value="1"></i>
+                      <i class="bi bi-star rating-star" data-value="2"></i>
+                      <i class="bi bi-star rating-star" data-value="3"></i>
+                      <i class="bi bi-star rating-star" data-value="4"></i>
+                      <i class="bi bi-star rating-star" data-value="5"></i>
+                    </div>
+                    <div class="rating-value">Sin calificación</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card mb-4 shadow-sm card-premium">
+                <div class="card-header py-3">
+                  <h4 class="my-0 fw-normal">Premium (Ornitólogo)</h4>
+                </div>
+                <div class="price-container">
+                  <h1 class="price"><span class="price-currency">$</span>99.900</h1>
+                  <p class="price-month">por año</p>
+                </div>
+                <div class="card-body">
+                  <ul class="list-unstyled mt-3 mb-4">
+                    <li>Acceso a mapas en alta resolución sin conexión</li>
+                    <li>
+                      Galería completa de +1000 especies con datos científicos
+                    </li>
+                    <li>Sistema de IA para identificación por foto/audio</li>
+                    <li>Análisis estadístico de avistamientos y migraciones</li>
+                    <li>Acceso a expediciones exclusivas guiadas</li>
+                    <li>Soporte VIP 24/7 y actualizaciones anticipadas</li>
+                  </ul>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-license="Premium (Ornitólogo)"
+                    data-price="99900"
+                  >
+                    Agregar
+                  </button>
+                  <input
+                    type="number"
+                    class="quantity-input"
+                    min="1"
+                    value="1"
+                    placeholder="Cantidad"
+                  />
+                   <!-- Sistema de calificación 5 estrellas -->
+                   <div class="rating-container mt-3">
+                    <p class="rating-label mb-1">Califica esta licencia:</p>
+                    <div class="star-rating" data-license="Premium (Ornitólogo)">
+                      <i class="bi bi-star rating-star" data-value="1"></i>
+                      <i class="bi bi-star rating-star" data-value="2"></i>
+                      <i class="bi bi-star rating-star" data-value="3"></i>
+                      <i class="bi bi-star rating-star" data-value="4"></i>
+                      <i class="bi bi-star rating-star" data-value="5"></i>
+                    </div>
+                    <div class="rating-value">Sin calificación</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="comparison-section mb-5">
+            <h2 class="text-center mb-4">Comparación de Planes</h2>
+            <div class="table-responsive">
+              <table class="table table-hover">
+                <thead class="table-dark">
+                  <tr>
+                    <th scope="col style="">Características</th>
+                    <th scope="col">Básica (Pajarero)</th>
+                    <th scope="col">Estándar (Observador)</th>
+                    <th scope="col">Premium (Ornitólogo)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Filtros por preferencias</td>
+                    <td><i class="bi bi-check2-circle icon-check"></i></td>
+                    <td><i class="bi bi-check2-circle icon-check"></i></td>
+                    <td><i class="bi bi-check2-circle icon-check"></i></td>
+                  </tr>
+                  <tr>
+                    <td>Notificación de eventos</td>
+                    <td></td>
+                    <td><i class="bi bi-check2-circle icon-check"></i></td>
+                    <td><i class="bi bi-check2-circle icon-check"></i></td>
+                  </tr>
+                  <tr>
+                    <td>Registro de usuario</td>
+                    <td><i class="bi bi-check2-circle icon-check"></i></td>
+                    <td><i class="bi bi-check2-circle icon-check"></i></td>
+                    <td><i class="bi bi-check2-circle icon-check"></i></td>
+                  </tr>
+                  <tr>
+                    <td>Descuento en eventos</td>
+                    <td></td>
+                    <td></td>
+                    <td><i class="bi bi-check2-circle icon-check"></i></td>
+                  </tr>
+    
+                  <tr class="table-info_row">
+                    <td><strong>Precio Anual</strong></td>
+                    <td>$29.900</td>
+                    <td>$59.900</td>
+                    <td>$99.900</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+    
+          <div class="table-responsive table-pedido">
+            <h2 class="mb-3 text-center">Tu pedido</h2>
+            <table class="table table-striped">
+              <thead class="table-dark">
+                <tr>
+                  <th scope="col">Licencia</th>
+                  <th scope="col">Cantidad</th>
+                  <th scope="col">Total por licencia</th>
+                </tr>
+              </thead>
+              <tbody id="orderTable">
+                <!-- Aquí se agregarán las filas dinámicamente -->
+              </tbody>
+            </table>
+          </div>
+    
+          <div class="totals-box">
+            <div class="totals-row">
+              <span>Subtotal:</span>
+              <span id="subtotal">$0.00</span>
+            </div>
+            <div class="totals-row">
+              <span>IVA (19%):</span>
+              <span id="iva">$0.00</span>
+            </div>
+            <div class="totals-row">
+              <span>Total:</span>
+              <span id="total">$0.00</span>
+            </div>
+          </div>
+
+          <button class="btn btn-success" id="btn-pagar" data-bs-toggle="modal" data-bs-target="#modalPago">
+            Pagar ahora
+          </button>
+          
+          <!-- Modal de Pago -->
+          <div class="modal fade" id="modalPago" tabindex="-1" aria-labelledby="modalPagoLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modalPagoLabel">Formulario de Pago</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form id="formPago">
+                    <div class="row mb-3">
+                      <div class="col-md-6">
+                        <label for="numeroCuotas" class="form-label">Número de cuotas</label>
+                        <input type="number" class="form-control" id="numeroCuotas" min="1" max="10" value="1" required>
+                        <div class="form-text">Máximo 10 cuotas</div>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="valorCuota" class="form-label">Valor por cuota</label>
+                        <div class="input-group">
+                          <span class="input-group-text">$</span>
+                          <input type="text" class="form-control" id="valorCuota" readonly>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                      <label for="nombreTitular" class="form-label">Nombre completo</label>
+                      <input type="text" class="form-control" id="nombreTitular" required>
+                    </div>
+                    
+                    <div class="row mb-3">
+                      <div class="col-md-8">
+                        <label for="numeroTarjeta" class="form-label">Número de tarjeta de crédito</label>
+                        <input type="text" class="form-control" id="numeroTarjeta" placeholder="XXXX-XXXX-XXXX-XXXX" maxlength="19" required>
+                        <div class="form-text">16 dígitos en formato XXXX-XXXX-XXXX-XXXX</div>
+                      </div>
+                      <div class="col-md-4 d-flex align-items-end">
+                        <div class="tarjeta-imagen mt-2">
+                          <img id="franquiciaTarjeta" src="../img/card.png" alt="Tarjeta" height="100">
+                          <span id="nombreFranquicia">Tarjeta</span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="row mb-3">
+                      <div class="col-md-4">
+                        <label for="codigoSeguridad" class="form-label">Código de seguridad</label>
+                        <input type="password" class="form-control" id="codigoSeguridad" maxlength="4" required>
+                        <div class="form-text">4 dígitos numéricos</div>
+                      </div>
+                      <div class="col-md-4">
+                        <label for="mesExpiracion" class="form-label">Mes de expiración</label>
+                        <select class="form-select" id="mesExpiracion" required>
+                          <option value="" selected disabled>Seleccione mes</option>
+                          <!-- Se llenará con JavaScript -->
+                        </select>
+                      </div>
+                      <div class="col-md-4">
+                        <label for="anioExpiracion" class="form-label">Año de expiración</label>
+                        <select class="form-select" id="anioExpiracion" required>
+                          <option value="" selected disabled>Seleccione año</option>
+                          <!-- Se llenará con JavaScript -->
+                        </select>
+                      </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                      <label for="direccion" class="form-label">Dirección</label>
+                      <input type="text" class="form-control" id="direccion" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                      <label for="ciudad" class="form-label">Ciudad</label>
+                      <input type="text" class="form-control" id="ciudad" required>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                  <button type="button" class="btn btn-success" id="btnConfirmarPago">Pagar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Modal de Confirmación de Pago -->
+          <div class="modal fade" id="modalConfirmacion" tabindex="-1" aria-labelledby="modalConfirmacionLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modalConfirmacionLabel">Resumen de Compra</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Detalles de la transacción</h5>
+                      <p><strong>Fecha:</strong> <span id="fechaCompra"></span></p>
+                      <p><strong>Hora:</strong> <span id="horaCompra"></span></p>
+                      <p><strong>Total de la compra:</strong> $<span id="totalCompra"></span></p>
+                      <p><strong>Cantidad de cuotas:</strong> <span id="cantidadCuotas"></span></p>
+                      <p><strong>Valor por cuota:</strong> $<span id="valorCuotaResumen"></span></p>
+                      <p><strong>Tarjeta:</strong> XXXX-XXXX-XXXX-<span id="ultimosDigitos"></span></p>
+                      <div class="text-center mt-3">
+                        <img id="franquiciaResumen" src="../img/card.png" alt="Tarjeta" height="100">
+                        <p id="nombreFranquiciaResumen">Tarjeta</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                  <button type="button" class="btn btn-success" id="btnFinalizarCompra">Finalizar Compra</button>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-4" id="footer-pages"></footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript personalizado -->
+    <script src="../js/main.js"></script>
+    <script src="../js/planes.js"></script>
+  </body>
+</html>
