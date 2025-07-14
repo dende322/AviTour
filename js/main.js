@@ -1,5 +1,6 @@
 // Crear arrays para almacenar los datos de los sitios, especies, eventos y galería
 function loadData() {
+  localStorage.setItem("dark-mode", "inactive");
   if (!localStorage.getItem("sites")) {
     localStorage.setItem(
       "sites",
@@ -352,7 +353,7 @@ function loadFeaturedSites() {
     html += `
             <div class="col-md-4">
                 <div class="card site-card h-100">
-                    <img src="${site.image}" class="card-img-top" alt="${site.name}">
+                    <img src="../${site.image}" class="card-img-top" alt="${site.name}">
                     <div class="card-body">
                         <h5 class="card-title">${site.name}</h5>
                         <p class="card-text"><i class="bi bi-geo-alt"></i> ${site.location}</p>
@@ -376,7 +377,7 @@ function loadFeaturedSpecies() {
     html += `
             <div class="col-md-4">
                 <div class="card h-100 species-card">
-                    <img src="${species.image}" class="card-img-top" alt="${species.name}">
+                    <img src="../${species.image}" class="card-img-top" alt="${species.name}">
                     <div class="card-body">
                         <h4 class="card-title">${species.name}</h4>
                         <p class="card-text"><em>${species.scientificName}</em></p> 
@@ -1124,7 +1125,7 @@ function loadGallery() {
           <div class="card-body">
             <h5 class="card-title">${image.title}</h5>
             <p class="card-text">
-              <i class="bi bi-geo-alt-fill icon-site-link"></i><a class="site-link" href="sitios.html?id=${site.id}">${site.name}</a><br>
+              <i class="bi bi-geo-alt-fill icon-site-link"></i><a class="site-link" href="sitios.html?id=${site?.id}">${site?.name}</a><br>
               <i class="bi bi-calendar-event"></i> ${formattedDate}<br>
               <i class="bi bi-camera"></i> ${image.photographer}
             </p>
@@ -1243,7 +1244,7 @@ function changeDarkMode() {
 
   function disableDarkMode() {
     document.body.classList.remove("dark-mode");
-    localStorage.setItem("dark-mode", null);
+    localStorage.setItem("dark-mode", "inactive");
     chartsColor();
   }
 
