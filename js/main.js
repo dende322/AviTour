@@ -469,7 +469,7 @@ function loadNavbarPages() {
   if (!contsiner) return;
   let html = `
    <div class="container">
-            <a class="navbar-brand logo" href="index.html">
+            <a class="navbar-brand logo" href="../index.html">
                 <img src="../img/logo.png" alt="AviTour Logo" height="40" class="me-2">
                 <span>AviTour</span>
             </a>
